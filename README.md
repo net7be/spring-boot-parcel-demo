@@ -1,7 +1,13 @@
-
 # SpringBoot - Adding static assets bundling using Parcel
 Requires Node.JS and the package `parcel-bundler` installed globally.
 
+If you cloned the repo you need to run
+```
+npm install
+```
+From the root directory.
+
+## How we enabled static assets bundling
 - Create directory resources/src
 - Add index.js and site.css
 - Create a template in resource/templates -> reference the assets but from static instead of src - use th:url and th:href to enable cache busting later on
@@ -16,16 +22,6 @@ spring.resources.chain.strategy.content.paths=/**
 - Prepare the scripts in package.json to actually run the project
 
 ## npm scripts
-Currently using these:
-```json
-"scripts": {
-  "watch": "npx parcel watch src/main/resources/src/main.js -d src/main/resources/static",
-  "build-assets": "npx parcel build src/main/resources/src/main.js -d src/resources/static",
-  "build": "npm run build-assets && mvnw clean package",
-  "dev": "concurrently -k \"npm run watch\" \"mvnw spring-boot:run\""
-}
-```
-
 To use in development, run:
 ```
 npm run dev
@@ -48,7 +44,8 @@ Spring Boot does not reload the app server when code changes. It requires an add
 
 # TODO
 - [x] Check that the cache dir for Parcel is really in .gitignore
-- [x] Pretty sure we need the --public-url option because the assets are in "static" -> "static" becomes the HTTP root of the embedded Tomcat
+- [x] Pretty sure we need the --public-url option because the assets are in "/assets" on the embedded Tomcat -> --public-url added to parcel calls in package.json
 - [ ] Test on Linux, calling mvnw instead of ./mvnw might not work there
 - [ ] Templates do not autoreload unless the Thymeleaf cache is disabled or the app is ran in debug mode
-- [ ] Add an image
+- [x] Add an image
+- [ ] Need to explain that we're not transpiling anything or add a babelrc

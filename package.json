@@ -1,17 +1,17 @@
 {
   "name": "staticdemo",
   "version": "1.0.0",
-  "description": "Requires Node.JS and the package `parcel-bundler` installed globally.",
+  "description": "Demo app for using ParcelJS to bundle static assets with Spring Boot",
   "main": "main.js",
   "scripts": {
-    "watch": "npx parcel watch src/main/resources/src/main.js -d src/main/resources/static",
-    "build-assets": "npx parcel build src/main/resources/src/main.js -d src/resources/static",
+    "watch": "npx parcel watch src/main/resources/src/main.js -d src/main/resources/static/assets --public-url /assets",
+    "build-assets": "npx parcel build src/main/resources/src/main.js -d src/resources/static/assets --public-url /assets",
     "build": "npm run build-assets && mvnw clean package",
     "dev": "concurrently -k \"npm run watch\" \"mvnw spring-boot:run\""
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Net7",
+  "license": "MIT",
   "devDependencies": {
     "concurrently": "^4.1.1",
     "cssnano": "^4.1.10"

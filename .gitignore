@@ -5,6 +5,7 @@ target/
 !**/src/test/**
 node_modules
 .cache
+/src/main/resources/static/assets/main.*
 
 ### STS ###
 .apt_generated
