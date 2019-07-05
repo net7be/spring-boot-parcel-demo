@@ -2,10 +2,11 @@
   "name": "staticdemo",
   "version": "1.0.0",
   "description": "Requires Node.JS and the package `parcel-bundler` installed globally.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "watch": "npx parcel watch src/main/resources/src/main.js -d src/main/resources/static",
     "build-assets": "npx parcel build src/main/resources/src/main.js -d src/resources/static",
+    "build": "npm run build-assets && mvnw clean package",
     "dev": "concurrently -k \"npm run watch\" \"mvnw spring-boot:run\""
   },
   "keywords": [],
