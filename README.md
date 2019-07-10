@@ -48,4 +48,3 @@ Spring Boot does not reload the app server when code changes. It requires an add
 - [ ] Test on Linux, calling mvnw instead of ./mvnw might not work there
 - [ ] Templates do not autoreload unless the Thymeleaf cache is disabled or the app is ran in debug mode
 - [x] Add an image
-- [ ] Need to explain that we're not transpiling anything or add a babelrc
