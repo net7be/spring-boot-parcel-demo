@@ -22,6 +22,8 @@ spring.resources.chain.strategy.content.paths=/**
 - Prepare the scripts in package.json to actually run the project
 
 ## npm scripts
+**NB**: These scripts won't work on Windows as is. There is a good amount of workarounds to make this cross platform but it would complicate the whole thing a lot. If running on Windows, you just have to edit package.json and replace all the `./mvnw` occurrences to `mvnw`.
+
 To use in development, run:
 ```
 npm run dev
@@ -45,6 +47,5 @@ Spring Boot does not reload the app server when code changes. It requires an add
 # TODO
 - [x] Check that the cache dir for Parcel is really in .gitignore
 - [x] Pretty sure we need the --public-url option because the assets are in "/assets" on the embedded Tomcat -> --public-url added to parcel calls in package.json
-- [ ] Test on Linux, calling mvnw instead of ./mvnw might not work there
 - [ ] Templates do not autoreload unless the Thymeleaf cache is disabled or the app is ran in debug mode
 - [x] Add an image

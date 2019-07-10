@@ -6,8 +6,8 @@
   "scripts": {
     "watch": "npx parcel watch src/main/resources/src/main.js -d src/main/resources/static/assets --public-url /assets",
     "build-assets": "npx parcel build src/main/resources/src/main.js -d src/resources/static/assets --public-url /assets",
-    "build": "npm run build-assets && mvnw clean package",
-    "dev": "concurrently -k \"npm run watch\" \"mvnw spring-boot:run\""
+    "build": "npm run build-assets && ./mvnw clean package",
+    "dev": "concurrently -k \"npm run watch\" \"./mvnw spring-boot:run\""
   },
   "keywords": [],
   "author": "Net7",
