@@ -15,6 +15,6 @@
   "devDependencies": {
     "concurrently": "^4.1.1",
     "cssnano": "^4.1.10",
-    "lodash": ">=4.17.13"
+    "lodash": ">=4.17.19"
   }
 }
